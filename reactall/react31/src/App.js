@@ -1,11 +1,10 @@
-class App{
+import Movies from "./Movies"
+let App = ()=>{
 
-    sayHello(){
-        return <div>
-            <h1>App Component</h1>
-        </div>
-    }
-    
-
+    return <div>
+                <h2> App Component</h2>
+                <hr />
+                <Movies/>
+            </div>
 }
 export default App
