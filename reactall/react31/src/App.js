@@ -1,10 +1,18 @@
-import Employees from "./EmployeeData/Employee"
+//import './styles/css/one.css'
+import Navbar from './Navbar/Navbar'
 let App = ()=>{
 
     return <div>
-                <h2> App Component</h2>
-                <hr />
-                <Employees/>
+                
+                                { /* <button className="btn btn-success">Test</button> */}
+                <Navbar/>
+                <hr/>
+                                { /* <button className="btn btn-success">Test</button> */}
+                                <Navbar/>
+                <hr/>
+                                { /* <button className="btn btn-success">Test</button> */}
+                                <Navbar/>
+                <hr/>
               
             </div>
 }
