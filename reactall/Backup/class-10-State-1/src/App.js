@@ -1,9 +1,10 @@
-import Navbar from "./Navbar/Navbar"
+import Message from "./StateEx/Message"
 import Product from "./Product/Product"
 let App = ()=>{
     
     return <div>
-             <Navbar/>
+             <h1>App Component</h1>
+             <hr/>
              <Product/>
            </div>
 }
