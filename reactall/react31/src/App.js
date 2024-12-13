@@ -1,11 +1,14 @@
-import Navbar from "./Navbar/Navbar"
-import Product from "./Product/Product"
-import Message from "./Message/Message"
+import Message from "./StateEx/Message"
+import Product from "./StateEx2/Product"
+import CompA from "./ProdDrill/CompA"
 let App = ()=>{
-    
+
     return <div>
-             <Navbar/>
-             <Message/>
+              <h1>App component</h1>
+              <hr/>
+
+              <hr/>
+              <CompA/>
            </div>
 }
 export default App
