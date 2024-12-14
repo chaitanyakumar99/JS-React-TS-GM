@@ -1,12 +1,14 @@
-import Message from "./LifeCycle/Message"
+import Message from "./StateEx/Message"
+import Product from "./StateEx2/Product"
+import CompA from "./ProdDrill/CompA"
 let App = ()=>{
 
     return <div>
               <h1>App component</h1>
               <hr/>
-            <Message/>
+
               <hr/>
-            
+              <CompA/>
            </div>
 }
 export default App
