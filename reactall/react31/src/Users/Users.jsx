@@ -1,41 +1,52 @@
-import Axios from "axios"
-import { useEffect, useState } from "react"
-let Users = ()=>{
-  let [users,setUsers]=useState([])
-  useEffect(()=>{
-    Axios.get('https://jsonplaceholder.typicode.com/users')
+import React, { Component } from 'react'
+import Axios from 'axios'
+class Users extends Component {
+  state;
+  constructor(props){
+    super(props)
+    this.state={
+        usersData:[]
+    }
+  }
+  componentDidMount(){
+    Axios.get('https://jsonplaceholder.typicode.com/users') 
     .then((resp)=>{
-        setUsers(resp.data)
+        this.setState({
+            usersData:resp.data
+        })
     })
-    .catch()   
-  },[]);
-
-    
-  return    <div>
-                <h1>User Component</h1>
-                <pre>{JSON.stringify(users)}</pre>
+    .catch(()=>{})
+  }
+ render() {
+    return (
+      <div>
+        <pre>{JSON.stringify(this.state.usersData)}</pre>
+        {
+            this.state.usersData.length > 0 ? 
+            <>
+            <table border={2}>
+                <thead>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>City</th>
+                </thead>
+                <tbody>
                 {
-                    users.length>0 ? <> 
-                    
-                    <table border={2}>
-                        <thead>
-                            <th>Id</th>
-                            <th>Name</th>
-                        </thead>
-                        <tbody>
-                        {
-                            users.map((user)=>{
-                                return <tr>
-                                        <td>{user.id}</td>
-                                        <td>{user.name}</td>
-                                    </tr>
-                            })
-                        }
-                        </tbody>
-                    </table>
-                    </>:<h3>No data</h3>
+                    this.state.usersData.map((user)=>{
+                        return <tr>
+                                    <td>{user.id}</td>
+                                    <td>{user.name}</td>
+                                    <td>{user.address.city}</td>
+                                </tr>
+                    })
                 }
-             
-            </div>
+                </tbody>
+            </table>
+            </> : <>No Data</>
+        }
+      </div>
+    )
+  }
 }
+
 export default Users
