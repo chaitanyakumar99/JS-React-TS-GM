@@ -6,6 +6,7 @@ import About from './components/About'
 import Services from './components/Services'
 import Contact from './components/Contact'
 import Login from './Login/Login'
+import Reg from './Registration/Reg'
 const App = () => {
   return (
     <div>
@@ -18,6 +19,7 @@ const App = () => {
                   <Route path="/services" element={<Services/>}/>
                   <Route path="/contact" element={<Contact/>}/>
                   <Route path="/login" element={<Login/>}/>
+                  <Route path="/reg" element={<Reg/>}/>
                   </Routes>
         </Router>
     </div>
