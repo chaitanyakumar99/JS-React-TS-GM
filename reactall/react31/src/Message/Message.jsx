@@ -3,8 +3,9 @@ import {gmAction,gnAction} from '../redux/Msg/message.action'
 import {useDispatch,useSelector} from 'react-redux'
 const Message = () => {
   let dispatch = useDispatch()
-  let message = useSelector((state)=>{
-      return state.message;
+  
+  let message = useSelector((store)=>{
+      return store.message;
   })
   let gmHandler = ()=>{
       dispatch(gmAction())

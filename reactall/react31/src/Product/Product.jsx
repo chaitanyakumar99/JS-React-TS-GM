@@ -2,8 +2,9 @@ import React from 'react'
 import {incrAction,decrAction} from '../redux/Produdct/product.action'
 import { useSelector,useDispatch } from 'react-redux'
 const Product = () => {
-       let product=useSelector((state)=>{
-        return state.product
+  
+       let product=useSelector((store)=>{
+        return store.product
        })
   
       let dispatch = useDispatch();
